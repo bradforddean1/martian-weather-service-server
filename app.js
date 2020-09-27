@@ -1,10 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const dayjs = require("dayjs");
 const handleGetWeatherData = require("./routeHandlers/handleGetWeatherData");
 
 const app = express();
 app.use(morgan("dev"));
+app.use(cors());
 
 app.get("/weather-data", (req, res) => {
   const lon = parseFloat(req.query.lon);
