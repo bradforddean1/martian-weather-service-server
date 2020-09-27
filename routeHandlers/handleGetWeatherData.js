@@ -28,14 +28,16 @@ async function handleGetWeatherData(lat, lon, dateStart, dateEnd) {
   }
 
   const martianWeather = await martianWeatherRes;
-  if (!martianWeather.error) {
-    mergeMartianData(martianWeather, days);
+  if (martianWeather.error) {
+    return Promise.reject(martianWeather.error);
   }
+  mergeMartianData(martianWeather, days);
 
   const earthWeather = await earthWeatherRes;
-  if (!earthWeather.error) {
-    mergeTerranData(earthWeather.data, days);
+  if (earthWeather.error) {
+    return Promise.reject(earthWeather.error);
   }
+  mergeTerranData(earthWeather.data, days);
 
   return days;
 }

@@ -6,7 +6,8 @@
  */
 function mergeMartianData(rawData, formedData) {
   //prettier-ignore
-  for (i = 0, keys = Object.keys(rawData); i < keys.length - 2; i++) {
+  const keys = Object.keys(rawData);
+  for (let i = 0; i < keys.length - 2; i++) {
     formedData[i].sol = keys[i];
 
     formedData[i].at.avg.mars = rawData[keys[i]].AT.av;
@@ -20,7 +21,8 @@ function mergeMartianData(rawData, formedData) {
     formedData[i].wind.avg.mars = rawData[keys[i]].HWS.av;
     formedData[i].wind.high.mars = rawData[keys[i]].HWS.mx;
     formedData[i].wind.low.mars = rawData[keys[i]].HWS.mn;
-    formedData[i].wind.windDir.mars = rawData[keys[i]].WD.most_common.compass_point;
+    formedData[i].wind.windDir.mars =
+      rawData[keys[i]].WD.most_common.compass_point;
   }
 }
 

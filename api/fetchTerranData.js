@@ -15,15 +15,15 @@ const formatQueryParams = require("../utils/formatQueryParams");
  * @return {Promise} Promise object with response data from the server
  */
 function fetchTerranData(geoData, dateRange = null) {
-  // const headers = new Headers();
-  //headers.append("x-api-key", "BXfdILEuBoXF0cB2NIrZVc5ileNAC4lW");
-  // headers.append("Access-Control-Allow-Origin", "*");
+  const headers = {
+    "x-api-key": "BXfdILEuBoXF0cB2NIrZVc5ileNAC4lW",
+  };
 
-  //   const requestOptions = {
-  //     method: "GET",
-  //     headers: headers,
-  //     redirect: "follow",
-  //   };
+  const requestOptions = {
+    method: "GET",
+    headers: headers,
+    redirect: "follow",
+  };
 
   let params = {
     lat: "33.749",
@@ -35,23 +35,20 @@ function fetchTerranData(geoData, dateRange = null) {
 
   params = formatQueryParams(params);
 
-  // return fetch(
-  //     //`https://cors-anywhere.herokuapp.com/https://api.meteostat.net/v2/point/daily?${params}`,
-  //     `https://api.meteostat.net/v2/point/daily?lat=33.749&lon=-84.388&alt=336&start=2020-08-01&end=2020-9-18`,
+  //   return fetch(
+  //     `https://api.meteostat.net/v2/point/daily?lat=33.749&lon=-84.388&alt=336&start=2019-06-01&end=2019-06-30`,
   //     requestOptions
-  // )
+  //   )
   //     .then((response) => {
-  //         if (response.ok) {
-  //             return response.json().data;
-  //         }
-  //         throw new Error(
-  //             "Failed to retrieve terran data from weather service."
-  //         );
+  //       if (response.ok) {
+  //         return response.json().data;
+  //       }
+  //       console.log(response);
+  //       throw new Error("Failed to retrieve Terran weather data from service.");
   //     })
   //     .catch((err) => {
-  //         console.log("here");
-  //         STATE.apiError.push(err);
-  //         return false;
+  //       console.log(err);
+  //       return { error: err };
   //     });
 
   return new Promise(function (resolve, reject) {

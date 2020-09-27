@@ -43,9 +43,13 @@ app.get("/weather-data", (req, res) => {
   }
 
   // query and return terran and martian weather data
-  handleGetWeatherData(lat, lon, dateStart, dateEnd).then((planetaryData) => {
-    res.json(planetaryData); //
-  });
+  handleGetWeatherData(lat, lon, dateStart, dateEnd)
+    .then((planetaryData) => {
+      res.json(planetaryData); //
+    })
+    .catch((err) => {
+      res.status(500).send("Failed to retrieve weather data from service");
+    });
 });
 
 app.listen(8000, () => {
