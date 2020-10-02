@@ -19,9 +19,10 @@ function fetchMartianData() {
         ver: "1.0",
     };
 
+  const endpoint = "https://api.nasa.gov/insight_weather/";
   params = formatQueryParams(params);
 
-  return fetch(`https://api.nasa.gov/insight_weather/?${params}`)
+  return fetch(`${endpoint}?${params}`)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -30,18 +31,9 @@ function fetchMartianData() {
         "Failed to retrieve Martian data from the NASA Insight program"
       );
     })
-    .then((response) => {
-      // for (let [key, value] of Object.keys(response)) {
-      //     if (moment.utc(value.Last_UTC).isAfter(end)) {
-      //         // filteredResponse.push(response[key]);
-      //     }
-      // }
-
-      return response;
-    })
     .catch((err) => {
       return { error: err };
     });
 }
 
-module.exports = fetchMartianData;
+module.exports = { fetchMartianData };

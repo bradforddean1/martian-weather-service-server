@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "source": "National Oceanic and Atmospheric Administration, Deutscher Wetterdienst",
+    "exec_time": 0.214,
+    "generated": "2020-09-29 02:22:22"
+  },
+  "data": [
+    {
+      "date": "2020-09-22",
+      "tavg": 15.7,
+      "tmin": 10.1,
+      "tmax": 21.6,
+      "prcp": 0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 8,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-23",
+      "tavg": 18.9,
+      "tmin": 14.7,
+      "tmax": 23.9,
+      "prcp": 0,
+      "snow": null,
+      "wdir": null,
+      "wspd": 5,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-24",
+      "tavg": 18.2,
+      "tmin": 17.1,
+      "tmax": 19.3,
+      "prcp": 24.9,
+      "snow": null,
+      "wdir": 99,
+      "wspd": 14,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-25",
+      "tavg": 20.9,
+      "tmin": 19.7,
+      "tmax": 24.4,
+      "prcp": 0.3,
+      "snow": null,
+      "wdir": 218,
+      "wspd": 8,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-26",
+      "tavg": 21.5,
+      "tmin": 18.7,
+      "tmax": 26.1,
+      "prcp": null,
+      "snow": null,
+      "wdir": null,
+      "wspd": 3,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-27",
+      "tavg": 22.3,
+      "tmin": 18.9,
+      "tmax": 27.6,
+      "prcp": null,
+      "snow": null,
+      "wdir": 165,
+      "wspd": 8,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    },
+    {
+      "date": "2020-09-28",
+      "tavg": 22.2,
+      "tmin": 20.1,
+      "tmax": 27.9,
+      "prcp": null,
+      "snow": null,
+      "wdir": 204,
+      "wspd": 10,
+      "wpgt": null,
+      "pres": null,
+      "tsun": null
+    }
+  ]
+}

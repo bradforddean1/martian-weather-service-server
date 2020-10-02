@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const dayjs = require("dayjs");
+
 const handleGetWeatherData = require("./routeHandlers/handleGetWeatherData");
 
 const app = express();
@@ -28,19 +31,20 @@ app.get("/weather-data", (req, res) => {
 
   // validate param content
   let clientError = false;
-  switch (true) {
-    case Number.isNaN(lon):
-      clientError = "lon must be numeric value";
-    case Number.isNaN(lat):
-      clientError = "lat must be numeric value";
-    case !dateStart.isValid():
-      clientError = "dateStart must be in YYYY-MM-DD format";
-    case !dateEnd.isValid():
-      clientError = "dateEnd must be in YYYY-MM-DD format";
-  }
-  if (clientError) {
-    return res.status("400").send(clientError);
-  }
+
+  if (Number.isNaN(lon))
+    return res.status("400").send("lon must be numeric value");
+
+  if (Number.isNaN(lat))
+    return res.status("400").send("lat must be numeric value");
+
+  if (!dateStart.isValid())
+    return res.status("400").send("dateStart must be in YYYY-MM-DD format");
+
+  if (!dateEnd.isValid())
+    return res
+      .status("400")
+      .send((clientError = "dateEnd must be in YYYY-MM-DD format"));
 
   // query and return terran and martian weather data
   handleGetWeatherData(lat, lon, dateStart, dateEnd)
@@ -52,6 +56,4 @@ app.get("/weather-data", (req, res) => {
     });
 });
 
-app.listen(8000, () => {
-  console.log("Express server is listening on port 8000!");
-});
+module.exports = app;

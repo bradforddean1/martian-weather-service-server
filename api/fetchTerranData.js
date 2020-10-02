@@ -156,4 +156,4 @@ function fetchTerranData(geoData, dateRange = null) {
   });
 }
 
-module.exports = fetchTerranData;
+module.exports = { fetchTerranData };
