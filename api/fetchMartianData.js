@@ -1,3 +1,5 @@
+const { MARTIAN_API_KEY } = require("../config");
+
 /**
  * Fetch Martian Data - establishes functionality for retrieveing data from Martian weather api.
  * @module
@@ -14,7 +16,7 @@ const formatQueryParams = require("../utils/formatQueryParams");
 function fetchMartianData() {
   //prettier-ignore
   let params = {
-        api_key: "JRPWKpyWr5JcEdUsLMypoII5iBeMaSn1Oy94DnkF",
+        api_key: MARTIAN_API_KEY,
         feedtype: "json",
         ver: "1.0",
     };

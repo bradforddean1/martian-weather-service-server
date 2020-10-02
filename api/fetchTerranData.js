@@ -1,3 +1,5 @@
+const { TERRAN_API_KEY } = require("../config");
+
 /**
  * Fetch Terran Data - establishes functionality for retrieveing data from terran weather api.
  * @module
@@ -16,7 +18,7 @@ const formatQueryParams = require("../utils/formatQueryParams");
  */
 function fetchTerranData(geoData, dateRange = null) {
   const headers = {
-    "x-api-key": "BXfdILEuBoXF0cB2NIrZVc5ileNAC4lW",
+    "x-api-key": TERRAN_API_KEY,
   };
 
   const requestOptions = {
