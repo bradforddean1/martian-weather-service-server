@@ -38,4 +38,4 @@ function fetchMartianData() {
     });
 }
 
-module.exports = { fetchMartianData };
+module.exports = fetchMartianData;

@@ -38,7 +38,6 @@ async function handleGetWeatherData(lat, lon, dateStart, dateEnd) {
     return Promise.reject(earthWeather.error);
   }
   mergeTerranData(earthWeather.data, days);
-
   return days;
 }
 

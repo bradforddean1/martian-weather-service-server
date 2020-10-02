@@ -52,7 +52,8 @@ app.get("/weather-data", (req, res) => {
       res.json(planetaryData); //
     })
     .catch((err) => {
-      res.status(500).send("Failed to retrieve weather data from service");
+      res.send(err)
+      // res.status(500).send("Failed to retrieve weather data from service");
     });
 });
 
